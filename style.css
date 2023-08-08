@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  /* 10 filas de igual tamaño */
+  grid-template-columns: repeat(10, 1fr);
+  /* 10 columnas de igual tamaño */
+  gap: 5px;
+  /* Espacio entre las celdas */
+  width: 500px;
+  /* Ancho de la grilla */
+  height: 500px;
+  /* Altura de la grilla */
+  margin-left: 1200px;
+  margin-top: -600px;
+  /* Centrar la grilla en la página */
+  border: 1px solid #000;
+  /* Borde para visualizar la grilla */
+}
+
+/* Estilos adicionales para visualizar las celdas */
+.grid-container div {
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+}
