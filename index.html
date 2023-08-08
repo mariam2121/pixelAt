@@ -19,54 +19,39 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3IlSmp7OgJkzK51IYhwUu5T3iJdoSFjFz7A&usqp=CAU"
         width="600" height="600">
 
-        
-    <style>
-        .btn-custom1 {
-            background-color: #f70404;
-            color: #ffffff;
-            border-color: #f70404;
-        }
-    </style>
-    <button type="button" class="btn btn-custom1">ROJO</button>
+    
+        <div class="palette-color" id="palette-color">
+            <!-- Paleta de colores y goma -->
+            <div class="color" style="background-color: #f70404;" onclick="setColor('#f70404')"></div>
+            <div class="color" style="background-color: #f1c592;" onclick="setColor('#f1c592')"></div>
+            <div class="color" style="background-color: #000000;" onclick="setColor('#000000')"></div>
+            <div class="color" style="background-color: #ffffff;" onclick="setColor('#ffffff')"></div>
+            <div class="eraser" onclick="setEraser()"></div>
+            <!-- Agrega más colores aquí si lo deseas -->
+          </div>
 
-    <style>
-        .btn-custom2 {
-            background-color: #f1c592;
-            color: #ffffff;
-            border-color: #f1c592;
-        }
-    </style>
-    <button type="button" class="btn btn-custom2">CREMA</button>
 
-    <style>
-        .btn-custom3 {
-            background-color: #000000;
-            color: #ffffff;
-            border-color: #000000;
-        }
-    </style>
-    <button type="button" class="btn btn-custom3">NEGRO</button>
-
-    <style>
-        .btn-custom4 {
-            background-color: #ffffff;
-            color: #000000;
-            border-color: #ffffff;
-        }
-    </style>
-    <button type="button" class="btn btn-custom4">BLANCO</button>
     <div class="grid-container">
-
     </div>
-
     <script>
         const gridContainer = document.querySelector('.grid-container');
-
+       
         for (let i = 1; i <= 100; i++) {
-            const gridItem = document.createElement('div');
-            gridItem.textContent = i;
-            gridContainer.appendChild(gridItem);
+            const cell = document.createElement('div');
+            cell.classList.add('grid-item');
+            gridContainer.appendChild(cell);
         }
+
+      
+
+        cell.addEventListener('click', () => {
+        if (eraserMode) {
+          cell.style.backgroundColor = '#ccc'; // Establecer el color predeterminado para la goma
+        } else {
+          cell.style.backgroundColor = currentColor;
+        }
+      });
+      
     </script>
 
 </body>
